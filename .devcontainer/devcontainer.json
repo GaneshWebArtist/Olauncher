@@ -7,7 +7,15 @@
       "gradle": true
     }
   },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y wget unzip && wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip && unzip commandlinetools-linux-11076708_latest.zip -d $HOME/android-sdk && wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip && unzip platform-tools-latest-linux.zip -d $HOME/android-sdk && yes | $HOME/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=$HOME/android-sdk --licenses && $HOME/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=$HOME/android-sdk \"platforms;android-30\""
-  
-  
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y wget unzip libvirt-bin qemu-kvm && wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip && unzip commandlinetools-linux-11076708_latest.zip -d $HOME/android-sdk && wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip && unzip platform-tools-latest-linux.zip -d $HOME/android-sdk && yes | $HOME/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=$HOME/android-sdk --licenses && $HOME/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=$HOME/android-sdk \"platforms;android-30\" \"emulator\" \"system-images;android-30;google_apis;x86_64\" && $HOME/android-sdk/cmdline-tools/bin/avdmanager create avd -n test -k 'system-images;android-30;google_apis;x86_64'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "redhat.java",
+        "vscjava.vscode-maven",
+        "vscjava.vscode-gradle"
+      ]
+    }
+  }
 }
